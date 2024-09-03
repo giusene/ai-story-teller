@@ -3,12 +3,14 @@ import style from "./Button.module.scss";
 interface ButtonProps {
   label: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
-  const { label, onClick } = props;
+  const { label, onClick, disabled } = props;
+
   return (
-    <button className={style.main} onClick={onClick}>
+    <button disabled={disabled} className={style.main} onClick={onClick}>
       {label}
     </button>
   );

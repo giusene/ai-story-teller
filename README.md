@@ -10,9 +10,10 @@
 
 ###### titolo h6
 
-- metodi e mixin sass
-- inserire campi input -> atom
-- inserire select -> atom
+V metodi e mixin sass
+V inserire campi input -> atom
+V inserire select -> atom
+
 - inserire switch (per definire bambino/adulto e condizionare l'output) -> atom
 - hamburger menu
 - carousel

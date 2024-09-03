@@ -1,12 +1,16 @@
 .main {
-    padding: 5px 10px;
+    padding: rem(5px) rem(10px);
     background-color: var(--color-100);
     color: var(--color-0);
     border: none;
     cursor: pointer;
-    transition: all 0.35s ease;
+    @include standard-animation(0.35s);
 
     &:hover{
         background-color: var(--color-80);
+    }
+
+    &:disabled {
+        opacity: 0.5;
     }
 }

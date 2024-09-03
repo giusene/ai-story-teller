@@ -1,0 +1,10 @@
+.main {
+    h3 {
+        margin-bottom: rem(5px);
+    }
+    input{
+        padding: rem(5px) rem(10px);
+        border: rem(1px) solid var(--color-20);
+        border-radius: rem(10px);
+    }
+}

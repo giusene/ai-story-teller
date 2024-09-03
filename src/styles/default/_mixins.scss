@@ -1,0 +1,14 @@
+@mixin window-style($width: 100%) {
+    width: $width;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 5px 5px #2524224d;
+    border: 1px solid #baac97;
+}
+
+@mixin standard-animation($duration: 0.2s) {
+    -webkit-transition: all $duration ease-in-out;
+    -o-transition: all $duration ease-in-out;
+    transition: all $duration ease-in-out;
+  }
