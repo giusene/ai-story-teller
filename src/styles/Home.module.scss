@@ -9,5 +9,11 @@
     gap: 20px;
 
   }
+
+  .result {
+    @include window-style(100%);
+    margin-top: rem(20px);
+    box-shadow: none;
+  }
  }
 }
