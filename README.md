@@ -10,12 +10,15 @@
 
 ###### titolo h6
 
-V metodi e mixin sass
-V inserire campi input -> atom
-V inserire select -> atom
-V inserire switch (per definire bambino/adulto e condizionare l'output) -> atom
-
 - toast
-- api browser
 - hamburger menu
 - carousel
+
+## References
+
+- Mark Down Syntax: https://www.markdownguide.org/basic-syntax/
+- Sass Mixin: https://sass-lang.com/documentation/at-rules/mixin/
+- Sass Function: https://sass-lang.com/documentation/at-rules/function/
+- Google AI studio docs: https://ai.google.dev/gemini-api/docs/ai-studio-quickstart?hl=it
+- Http Cats: https://http.cat/
+- Speech Synthesis Utterance: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance

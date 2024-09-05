@@ -1,3 +1,5 @@
+
+
 @mixin window-style($width: 100%) {
     width: $width;
     max-width: 900px;
@@ -11,4 +13,21 @@
     -webkit-transition: all $duration ease-in-out;
     -o-transition: all $duration ease-in-out;
     transition: all $duration ease-in-out;
-  }
+}
+
+@mixin button($color) {
+    padding: rem(5px) rem(10px);
+    background-color: $color;
+    color: var(--color-0);
+    border: none;
+    cursor: pointer;
+    @include standard-animation(0.35s);
+
+    &:hover{
+        background-color: var(--color-80);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    } 
+}
