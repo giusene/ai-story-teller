@@ -1,0 +1,29 @@
+.main {
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+
+    .breadUp, .breadDown, .hamb {
+        width: 100%;
+        height: 3px;
+        border-radius: 3px;
+        background-color: #000;
+        opacity: 1;
+        transition: all 0.35s ease;
+    }
+
+    &.active .hamb {
+        opacity: 0;
+    }
+
+    &.active .breadUp {
+        transform: rotate(45deg) translateY(6px) translateX(5.8px);
+    }
+    &.active .breadDown {
+        transform: rotate(-45deg) translateY(-6px) translateX(5.8px);
+    }
+}

@@ -10,10 +10,6 @@
 
 ###### titolo h6
 
-- toast
-- hamburger menu
-- carousel
-
 ## References
 
 - Mark Down Syntax: https://www.markdownguide.org/basic-syntax/

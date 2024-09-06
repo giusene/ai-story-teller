@@ -4,15 +4,31 @@ import Header from "@/components/Molecules/Header/Header";
 import WindowBox from "@/components/Organism/WindowBox/WindowBox";
 import InputBox from "@/components/Molecules/InputBox/InputBox";
 import SelectBox from "@/components/Molecules/SelectBox/SelectBox";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { listaGeneri } from "@/constants/common";
 import Button from "@/components/Atoms/Button/Button";
-import {
-  GenerateContentCandidate,
-  GoogleGenerativeAI,
-} from "@google/generative-ai";
+
 import SwitchBox from "@/components/Molecules/SwitchBox/SwitchBox";
 import Toast from "@/components/Atoms/Toast/Toast";
+
+const cardList = [
+  {
+    title: "Title 1",
+    description: "Description 1",
+  },
+  {
+    title: "Title 2",
+    description: "Description 2",
+  },
+  {
+    title: "Title 3",
+    description: "Description 3",
+  },
+  {
+    title: "Title 4",
+    description: "Description 4",
+  },
+];
 
 export default function Home() {
   const [protagonista, setProtagonista] = useState("");
@@ -24,6 +40,10 @@ export default function Home() {
   const [error, setError] = useState(false);
   const [response, setResponse] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const [showHamburger, setShowHamburger] = useState(false);
+
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const handleGenerate = async () => {
     setLoading(true);
@@ -73,6 +93,13 @@ export default function Home() {
     speechSynthesis.cancel();
     setIsPlaying(false);
   };
+
+  const handleCarouselBtn = (index: number) => {
+    carouselRef.current?.scrollTo({
+      left: 300 * index,
+    });
+  };
+
   return (
     <>
       <Head>
@@ -82,7 +109,36 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={style.main}>
-        <Header title="AI Story Teller" />
+        <Header
+          title="AI Story Teller"
+          showHamburger={showHamburger}
+          setShowHamburger={setShowHamburger}
+        />
+        <div
+          className={`${style.hamburgerWindow} ${
+            showHamburger ? style.active : ""
+          }`}
+        >
+          <div ref={carouselRef} className={style.carousel}>
+            {cardList.map((item, index) => (
+              <div key={index} className={style.card}>
+                <h1>{item.title}</h1>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className={style.btnSet}>
+            {cardList.map((item, index) => (
+              <Button
+                key={index}
+                label={`${index + 1}`}
+                onClick={() => handleCarouselBtn(index)}
+              />
+            ))}
+          </div>
+        </div>
+        <div className={`${style.mask} ${showHamburger ? style.active : ""}`} />
+
         <div className={style.content}>
           {error && (
             <Toast
